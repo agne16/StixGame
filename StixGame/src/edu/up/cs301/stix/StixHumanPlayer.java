@@ -102,10 +102,8 @@ android.content.DialogInterface.OnClickListener {
 	/**
 	 * this method gets called when the user clicks any of the buttons.	
 	 * 
-	 * @param button
-	 * 		the button that was clicked
+	 * @param v the button that was clicked
 	 */
-
 	public void onClick(View v) {
 		// if we are not yet connected to a game, ignore
 		if (game == null) return;

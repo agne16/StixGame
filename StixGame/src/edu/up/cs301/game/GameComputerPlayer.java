@@ -30,14 +30,14 @@ public abstract class GameComputerPlayer implements GamePlayer, Tickable {
 	 */
 	protected Game game; // the game object
 	protected int playerNum; // which player number I am
-	protected String name; // my name
-	protected String[] allPlayerNames; // list of all player names, in ID order
+	private final String name; // my name
+	private String[] allPlayerNames; // list of all player names, in ID order
 	private Handler myHandler; // the handler for this player's thread
 	private boolean running; // whether the player's thread is running
 	private boolean gameOver = false; // whether the game is over
 	private GameMainActivity myActivity; // the game's main activity, set only
 			// this game is connected to the GUI
-	private GameTimer myTimer = new GameTimer(this); // my timer
+	private final GameTimer myTimer = new GameTimer(this); // my timer
 	
 	/**
 	 * Returns this game's timer.
@@ -49,7 +49,7 @@ public abstract class GameComputerPlayer implements GamePlayer, Tickable {
 	}
 
 	/**
-	 * Called when the timer ticks; satisfies the Tickable interface.
+	 * Called when the timer ticks; satisfies the Tick-able interface.
 	 */
 	public final void tick(GameTimer timer) {
 		sendInfo(new TimerInfo(timer));
@@ -110,7 +110,7 @@ public abstract class GameComputerPlayer implements GamePlayer, Tickable {
 	 * perform any initialization that needs to be done after the player
 	 * knows what their game-position and opponents' names are.
 	 */
-	protected void initAfterReady() {
+	void initAfterReady() {
 		// by default, we do nothing
 	}
 	
@@ -164,7 +164,7 @@ public abstract class GameComputerPlayer implements GamePlayer, Tickable {
 	private class MyRunnable implements Runnable {
 		
 		// the object to post
-		private Object data;
+		private final Object data;
 		
 		// constructor
 		public MyRunnable(Object data) {
@@ -252,26 +252,13 @@ public abstract class GameComputerPlayer implements GamePlayer, Tickable {
 	 * @param msg
 	 * 		the "game over" message sent by the game
 	 */
-	protected void gameIsOver(String msg) {
+    void gameIsOver(String msg) {
 		// the default behavior is to put a pop-up for the user to see that tells
 		// the game's result
 		MessageBox.popUpMessage(msg, myActivity);
 	}
-	
-	/**
-	 * Sleeps for a particular amount of time. Utility method.
-	 * 
-	 * @param milliseconds
-	 * 			the number of milliseconds to sleep for
-	 */
-	protected void sleep(int milliseconds) {
-		try {
-			Thread.sleep(milliseconds);
-		} catch (InterruptedException e) {
-		}
-	}
-	
-	/**
+
+    /**
 	 * Tells whether this player requires a GUI. Since this is a computer
 	 * player, the answer should be 'false'.
 	 */

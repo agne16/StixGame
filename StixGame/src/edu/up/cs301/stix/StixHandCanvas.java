@@ -126,8 +126,8 @@ public class StixHandCanvas extends SurfaceView{
 	 * 
 	 * returns the card id at the current slot
 	 * 
-	 * @param slot to get ID from
-	 * @return card ID in slot
+	 * @param idx slot to get ID from
+	 * @return card ID in sl ot
 	 *  
 	 *  */
 	public int getSlotID(int idx)

@@ -23,6 +23,7 @@ import android.util.Pair;
  * @version July 2013
  *
  */
+@SuppressWarnings("ALL")
 public abstract class NetworkObjectPasser {
 	/**
 	 * instance variables

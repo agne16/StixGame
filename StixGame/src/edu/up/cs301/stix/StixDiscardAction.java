@@ -8,7 +8,6 @@ import edu.up.cs301.game.GamePlayer;
  * @author Micah Alconcel
  *
  */
-
 public class StixDiscardAction extends StixMoveAction {
 
 	// satisfy Serializable interface
@@ -21,7 +20,7 @@ public class StixDiscardAction extends StixMoveAction {
 	/**
 	 * Constructor for a StixDiscardAction
 	 * @param player - the player making the move
-	 * @param card - the card that is being discarded
+	 * @param cardID - the card that is being discarded
 	 */
 	StixDiscardAction(GamePlayer player, int cardID) {
 		super(player);

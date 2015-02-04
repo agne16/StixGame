@@ -21,8 +21,7 @@ public abstract class StixMoveAction extends GameAction {
 	/**
 	 * Constructor for the StixMoveAction class.
 	 * 
-	 * @param source
-	 *            the player making the move
+	 * @param player the player making the move
 	 */
 	public StixMoveAction(GamePlayer player) {
 		super(player);

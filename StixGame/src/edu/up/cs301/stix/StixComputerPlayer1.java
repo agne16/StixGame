@@ -27,7 +27,7 @@ public class StixComputerPlayer1 extends GameComputerPlayer implements StixPlaye
 	private boolean madeMove = false;
 	private boolean didRemove = false;
 	private boolean gate = true;
-	Integer guard = new Integer(0);
+	Integer guard = Integer.valueOf(0);
 	private boolean[][] savedGameBoard;
 	private boolean[][] currGameBoard;
 
